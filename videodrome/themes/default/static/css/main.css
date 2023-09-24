@@ -1,0 +1,162 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background-color: #000;
+    height: 100%;
+    border: 0px solid red;
+    overflow:hidden;
+}
+
+body {
+	background: transparent url(../images/background.png) no-repeat fixed;
+	background-size: 100% 100%;
+}
+
+::-moz-selection{
+background-color:Transparent;
+}
+
+::selection {
+background-color:Transparent;
+}
+
+#container1{
+    height: 100%;
+    width: 100%;
+    border: 0px solid green;
+    overflow: hidden;
+}
+
+#container2{
+    width: 100%;
+    height: 100%;
+    border: 0px solid blue;
+    overflow: auto;
+    padding-right: 16px;
+	padding-left:8px;
+}
+
+#center {
+	text-align:center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline-block;
+	border:0px solid green;
+	width:230px;
+	margin:25px;
+	margin-bottom: 20px;
+}
+
+li  div {
+	border:0px solid yellow;
+	width:100%;
+	text-align:center;
+	padding:0;
+}
+
+li .info {
+	border:0px solid blue;
+	width:100%;
+	height:50px;
+	overflow:hidden;
+	margin:0;
+	padding:0;	
+	color: #fff;
+	font:12pt helvetica;
+	cursor:pointer;
+}
+
+li .preview {
+	position:relative;
+	border:10px solid white;
+	width:200px;
+	height:160px;
+	cursor:pointer;
+}
+
+li img {
+	width:210px;
+	height:300px;
+	border:10px solid #fff;
+	cursor:pointer;
+}
+
+.hover img {
+	border: 10px solid lime;
+}
+
+.selected img {
+	border: 10px solid red;
+	/* transition: border 0.5s ease; */
+}
+
+/*
+.selected img:hover {
+	border: 10px solid purple;
+}
+*/
+
+.item {
+	position:relative;
+	color:white;
+}
+
+.item > span {
+	position:absolute;
+	top:-30px;
+	right:-10px;
+	font-size:50px;
+	font-family:'Arial Black';
+	font-weight:bold;
+	border:0px solid blue;
+	opacity:1;
+	height:50px;
+	margin:15px;
+	padding:0;
+	z-index:1;
+	
+	text-align:right;
+	text-shadow: 
+	0 1px 0 #ccc,
+	0 2px 0 #c9c9c9,
+	0 3px 0 #bbb,
+	0 4px 0 #b9b9b9,
+	0 5px 0 #aaa,
+	0 6px 1px rgba(0,0,0,.1),
+	0 0 5px rgba(0,0,0,.1),
+	0 1px 3px rgba(0,0,0,.3),
+	0 3px 5px rgba(0,0,0,.2),
+	0 5px 10px rgba(0,0,0,.25),
+	0 10px 10px rgba(0,0,0,.2),
+	0 20px 20px rgba(0,0,0,.15);
+	text-shadow: 
+	-4px 3px 0 #000;
+	text-shadow:
+	0 1px #808d93,
+	-1px 0 #cdd2d5,
+	-1px 2px #808d93,
+	-2px 1px #cdd2d5,
+	-2px 3px #808d93,
+	-3px 2px #cdd2d5,
+	-3px 4px #808d93,
+	-4px 3px #cdd2d5,
+	-4px 5px #808d93,
+	-5px 4px #cdd2d5,
+	-5px 6px #808d93,
+	-6px 5px #cdd2d5,
+	-6px 7px #808d93,
+	-7px 6px #cdd2d5,
+	-7px 8px #808d93,
+	-8px 7px #cdd2d5;
+}
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Videodrome</title>
+	<meta charset="utf-8" />
+	<link href="{{ path_relative }}{{data_folder}}/themes/default/static/css/main.css" rel="stylesheet">
+	<script src="{{ path_relative }}{{data_folder}}/themes/default/static/js/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{ path_relative }}{{data_folder}}/themes/default/static/js/keynav/keynav.js"></script>
+</head>
+
+<body id="index" class="home">
+	<div id="container1">
+		<div id="container2">
+			<div id="center">
+				<audio src="{{ path_relative }}{{data_folder}}/themes/default/static/sounds/hover.wav" id="audio_hover"></audio>
+				<audio src="{{ path_relative }}{{data_folder}}/themes/default/static/sounds/click.wav" id="audio_click"></audio>
+				<audio src="{{ path_relative }}{{data_folder}}/themes/default/static/sounds/back.wav" id="audio_back"></audio>
+				<ul id="post-list">
+				{% for item in items %}
+					{% if item["type"] == "directory" %}
+					<li>
+						<div class="item" data-href="./{{ item['title'] }}/index.html">
+						<!--a href="./{{ item['title'] }}/index.html"-->
+						{% if item["directory_thumbnail_path"] != "" %}
+						<img class='poster' src="./{{ item['title'] }}/{{ item['title'] }}.jpg">
+						{% else %}
+						<img class='poster' src="{{ path_relative }}{{data_folder}}/themes/default/static/images/poster_folder.png">
+						{% endif %}
+						<div class="info">{{ item['title'] }}</div>
+						<!--/a-->
+						</div>
+					</li>
+					{% elif item["extension"] == "mp4" %}
+					<li>
+						<div class="item" data-href="./videoplayer.html?v=./{{ item['filename'] }}">
+						<span>{{ item['count'] }}</span>
+						{% if item["thumbnail_path"] != "" %}
+						<img class='preview' src="{{ item['thumbnail_path'] }}">
+						<!--img class='poster-small' src="./{{ title }}.jpg"-->
+						{% elif item["poster_path"] != "" %}
+						<img class='poster' src="{{ item['poster_path'] }}">
+						{% else %}
+						<img class='poster' src="{{ path_relative }}{{data_folder}}/themes/default/static/images/poster_film.png">
+						{% endif %}
+						<div class="info">{{ item['title'] }}</div>
+						</div>
+					</li>
+					{% else %}
+					<li>
+						<div class="item" data-href="file:///{{ item['path'] }}">
+						<span>{{ item['count'] }}</span>
+						{% if item["thumbnail_path"] != "" %}
+						<img class='preview' src="{{ item['thumbnail_path'] }}">
+						<!--img class='poster-small' src="./{{ title }}.jpg"-->
+						{% elif item["poster_path"] != "" %}
+						<img class='poster' src="{{ item['poster_path'] }}">
+						{% else %}
+						<img class='poster' src="{{ path_relative }}{{data_folder}}/themes/default/static/images/poster_film.png">
+						{% endif %}
+						<div class="info">{{ item['title'] }}</div>
+						</div>
+					</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

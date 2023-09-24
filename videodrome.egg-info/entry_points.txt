@@ -1,0 +1,3 @@
+[console_scripts]
+videodrome = videodrome.__main__:main
+

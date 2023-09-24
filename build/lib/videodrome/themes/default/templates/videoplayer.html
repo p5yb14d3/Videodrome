@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Videodrome</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<script src="{{ path_relative }}{{data_folder}}/themes/default/static/js/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{ path_relative }}{{data_folder}}/themes/default/static/js/videoplayer/videoplayer.js"></script>
+	<link href="{{ path_relative }}{{data_folder}}/themes/default/static/css/videoplayer.css" rel="stylesheet" >
+</head>
+
+<body>
+<audio src="{{ path_relative }}{{data_folder}}/themes/default/static/sounds/confirm.wav" onended="confirm_selection();"></audio>
+<audio src="{{ path_relative }}{{data_folder}}/themes/default/static/sounds/back.wav" onended="history.back();"></audio>
+<div>
+<video id="video" controls autoplay src=""></video>
+</div>
+</body>
+</html>
